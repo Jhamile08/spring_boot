@@ -1,5 +1,6 @@
 package com.taller_1.taller_1.Entity;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -26,7 +27,7 @@ public class Task {
     private LocalDate creationDate;
 
     @Column(nullable = false)
-    private LocalDate creationTime;
+    private LocalTime creationTime;
 
     @Column(length = 50, nullable = false)
     private String state;
@@ -34,7 +35,7 @@ public class Task {
     public Task() {
     }
 
-    public Task(long id, String title, String description, LocalDate creationDate, LocalDate creationTime,
+    public Task(long id, String title, String description, LocalDate creationDate, LocalTime creationTime,
             String state) {
         this.id = id;
         this.title = title;
@@ -76,11 +77,11 @@ public class Task {
         this.creationDate = creationDate;
     }
 
-    public LocalDate getCreationTime() {
+    public LocalTime getCreationTime() {
         return creationTime;
     }
 
-    public void setCreationTime(LocalDate creationTime) {
+    public void setCreationTime(LocalTime creationTime) {
         this.creationTime = creationTime;
     }
 
